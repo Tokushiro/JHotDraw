@@ -10,6 +10,12 @@ Upstream case study: https://github.com/sweat-tek/JHotDraw
 
 Branch: `maintenance/duplicate-feature`
 
+Draft pull request: https://github.com/Tokushiro/JHotDraw/pull/2
+
+CI push run: https://github.com/Tokushiro/JHotDraw/actions/runs/27103448409
+
+CI pull-request run: https://github.com/Tokushiro/JHotDraw/actions/runs/27103453227
+
 Date: 2026-06-07
 
 Backlog evidence item: https://github.com/Tokushiro/JHotDraw/issues/1
@@ -385,7 +391,7 @@ The final change is intentionally low risk:
 Remaining risk:
 
 - GitHub Projects could not be used directly because the current GitHub CLI token was missing project scopes. A GitHub issue was created as a backlog evidence item instead.
-- CI run evidence is available after pushing the branch and opening the pull request.
+- CI run evidence is available from the successful push and pull-request workflow runs linked at the top of this report.
 - JGiven automation was not added; BDD scenarios are documented and the refactoring behavior is covered by JUnit 4.
 
 Future maintenance recommendation:
