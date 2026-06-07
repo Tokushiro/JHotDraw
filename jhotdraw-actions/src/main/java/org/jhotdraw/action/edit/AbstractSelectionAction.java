@@ -8,6 +8,7 @@
  */
 package org.jhotdraw.action.edit;
 
+import java.awt.KeyboardFocusManager;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import javax.swing.AbstractAction;
@@ -78,6 +79,18 @@ public abstract class AbstractSelectionAction extends AbstractAction {
             };
             target.addPropertyChangeListener(new WeakPropertyChangeListener(propertyHandler));
         }
+    }
+
+    protected JComponent getActiveComponent() {
+        if (target != null) {
+            return target;
+        }
+        if (KeyboardFocusManager.getCurrentKeyboardFocusManager().
+                getPermanentFocusOwner() instanceof JComponent) {
+            return (JComponent) KeyboardFocusManager.getCurrentKeyboardFocusManager().
+                    getPermanentFocusOwner();
+        }
+        return null;
     }
 
     protected void updateEnabled() {

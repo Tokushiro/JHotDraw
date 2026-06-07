@@ -7,7 +7,6 @@
  */
 package org.jhotdraw.action.edit;
 
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import org.jhotdraw.api.gui.EditableComponent;
@@ -71,12 +70,7 @@ public class DuplicateAction extends AbstractSelectionAction {
 
     @Override
     public void actionPerformed(ActionEvent evt) {
-        JComponent c = target;
-        if (c == null && (KeyboardFocusManager.getCurrentKeyboardFocusManager().
-                getPermanentFocusOwner() instanceof JComponent)) {
-            c = (JComponent) KeyboardFocusManager.getCurrentKeyboardFocusManager().
-                    getPermanentFocusOwner();
-        }
+        JComponent c = getActiveComponent();
         if (c != null && c.isEnabled()) {
             if (c instanceof EditableComponent) {
                 ((EditableComponent) c).duplicate();

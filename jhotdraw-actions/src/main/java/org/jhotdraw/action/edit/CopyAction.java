@@ -7,7 +7,6 @@
  */
 package org.jhotdraw.action.edit;
 
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import org.jhotdraw.datatransfer.ClipboardUtil;
@@ -56,12 +55,7 @@ public class CopyAction extends AbstractSelectionAction {
 
     @Override
     public void actionPerformed(ActionEvent evt) {
-        JComponent c = target;
-        if (c == null && (KeyboardFocusManager.getCurrentKeyboardFocusManager().
-                getPermanentFocusOwner() instanceof JComponent)) {
-            c = (JComponent) KeyboardFocusManager.getCurrentKeyboardFocusManager().
-                    getPermanentFocusOwner();
-        }
+        JComponent c = getActiveComponent();
         // Note: copying is allowed for disabled components
         if (c != null) {
             c.getTransferHandler().exportToClipboard(
