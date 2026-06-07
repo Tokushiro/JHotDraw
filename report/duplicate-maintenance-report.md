@@ -8,13 +8,13 @@ Project: https://github.com/Tokushiro/JHotDraw
 
 Upstream case study: https://github.com/sweat-tek/JHotDraw
 
-Branch: `maintenance/duplicate-feature`
+Branch: `maintenance/duplicate-feature-clean`
 
-Draft pull request: https://github.com/Tokushiro/JHotDraw/pull/2
+Draft pull request: https://github.com/Tokushiro/JHotDraw/pull/3
 
-CI push run: https://github.com/Tokushiro/JHotDraw/actions/runs/27103448409
+CI push run: https://github.com/Tokushiro/JHotDraw/actions/runs/27103766076
 
-CI pull-request run: https://github.com/Tokushiro/JHotDraw/actions/runs/27103453227
+CI pull-request run: https://github.com/Tokushiro/JHotDraw/actions/runs/27103772932
 
 Date: 2026-06-07
 
@@ -46,7 +46,7 @@ The course lab repository was forked from `sweat-tek/JHotDraw` to `Tokushiro/JHo
 
 The work was performed on branch:
 
-`maintenance/duplicate-feature`
+`maintenance/duplicate-feature-clean`
 
 The lab requested JDK 11 and Maven 3.8.x. The machine had Java 25 on PATH and no Maven on PATH, so portable tools were installed under the workspace:
 
@@ -416,7 +416,7 @@ Postfactoring is represented by checking that the changed actions are still read
 
 Verification is represented by unit tests, full Maven builds, CI runs, and the GUI smoke launch. The course material stresses that verification spans multiple phases and that a successful compile is not enough. For this reason, the work includes both local Maven verification and GitHub Actions evidence.
 
-Conclusion is represented by the final pull request, successful CI, and this report. The conclusion phase creates a new baseline candidate. In this case the candidate baseline is the branch `maintenance/duplicate-feature`, pushed to the fork and opened as a draft pull request.
+Conclusion is represented by the final pull request, successful CI, and this report. The conclusion phase creates a new baseline candidate. In this case the candidate baseline is the branch `maintenance/duplicate-feature-clean`, pushed to the fork and opened as a draft pull request.
 
 ## Appendix B. Expanded Concept Location Notes
 
@@ -663,8 +663,8 @@ mvn -s .maven-settings.xml clean install
 
 The final commit triggered two successful workflow runs:
 
-- Push run: https://github.com/Tokushiro/JHotDraw/actions/runs/27103509067
-- Pull-request run: https://github.com/Tokushiro/JHotDraw/actions/runs/27103509953
+- Push run: https://github.com/Tokushiro/JHotDraw/actions/runs/27103766076
+- Pull-request run: https://github.com/Tokushiro/JHotDraw/actions/runs/27103772932
 
 The workflow uses `GITHUB_TOKEN` and `.maven-settings.xml` so Maven can resolve packages from the GitHub Packages repository configured by the course project.
 
@@ -743,9 +743,9 @@ The next improvement would be to inspect other edit actions for the same lookup 
 | Requirement | Evidence |
 | --- | --- |
 | Fork repository | `https://github.com/Tokushiro/JHotDraw` |
-| Branch | `maintenance/duplicate-feature` |
+| Branch | `maintenance/duplicate-feature-clean` |
 | User story/backlog item | `https://github.com/Tokushiro/JHotDraw/issues/1` |
-| Pull request | `https://github.com/Tokushiro/JHotDraw/pull/2` |
+| Pull request | `https://github.com/Tokushiro/JHotDraw/pull/3` |
 | JDK 11 used | Temurin 11.0.31 output from local Maven verification |
 | Maven 3.8.x used | Apache Maven 3.8.8 output from local Maven verification |
 | Baseline build | `mvn -s .maven-settings.xml clean install -DskipTests`, successful |
